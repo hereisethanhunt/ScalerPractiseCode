@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+            color: darkorange
+        }
+
+        /* templates starts from here */
+        .box1 {
+            /* white-space: nowrap; */
+            height: 200px;
+            /* width: 200px; */
+            /* border: dashed; */
+            /* padding:10px; */
+            background-color: lightgreen;
+            /* default */
+            /* overflow: visible; */
+
+            /* it clips after the height */
+            /* overflow: hidden;  */
+
+            /* it creates scroll bar on both the sides */
+            /* overflow: scroll; */
+
+            /* showing scroll bar where it is required */
+            overflow :auto;
+        }
+
+        /* .img1 {
+            background-size: cover;
+        } */
+        .img1 {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Overflow</h1>
+    <!-- defined height -> block  -->
+    <!-- <div class="box1">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, ut suscipit dolorem delectus sunt quibusdam aperiam reiciendis modi maxime at velit cumque accusantium voluptatibus. Numquam maiores iure delectus sapiente id!</p>
+    </div> -->
+    <div class="box1">
+        <img class="img1" src="./../5_Project/headerbg.jpg" alt="">
+    </div>
+</body>
+
+</html>
+<!-- https://css-tricks.com/almanac/properties/w/whitespace/ -->

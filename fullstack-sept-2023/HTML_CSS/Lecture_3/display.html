@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        display: block;
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        padding: 20px;
+        margin: 20px;
+        /* box-sizing: border-box; */
+    }
+
+    .inline {
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        margin: 20px;
+        padding:30px;
+    }
+
+    .inline_block {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        padding: 20px;
+        margin: 20px;
+
+        padding-left:10px !important
+        
+    }
+
+</style>
+
+<body class="parent">
+    <!-- block level element  -->
+    <div class="box">Hello Hi how are you</div>
+    <div class="box">Hello Hi how are you</div>
+    <!-- <div>I am another div</div> -->
+    <!-- inline element -->
+    <span class="inline">I am inline</span>
+    <span class="inline">I am inline</span>
+
+    <!--  inline block -->
+    <!-- <div class="inline_block">I am inline block</div>
+    <div class="inline_block">I am inline block</div> -->
+
+    <!-- <div class="box">Hello Hi how are you</div> -->
+</body>
+
+</html>

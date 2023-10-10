@@ -1,0 +1,46 @@
+/* 
+screen -> print, potrait ,landscape
+ 
+*/
+
+/* max -> 1100->1400px */
+/* desktop first */
+/* mobile first -> min-width */
+
+
+/* 0 to 1400 lightblue */
+@media only screen and (max-width:1400px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* 0-> 1100 */
+/* 0 to 1100 */
+@media only screen and (max-width:1100px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
+/* 0-> 900 */
+/* 0 to 900 */
+@media only screen and (max-width:900px) {
+    body {
+        background-color: lightsalmon;
+    }
+}
+
+
+
+/* @media print {
+    body {
+        background-color: red !important;
+    }
+} */
+
+
+/* mobile first -> easier  */
+/* desktop / mobile -> userbase*/
+
+/* media queies -> see your content  */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example Stylesheet</title>
+    <style>
+        * {
+            color: green;
+        }
+
+        p {
+            color: red;
+        }
+
+        .parent {
+            color: lightgoldenrodyellow;
+        }
+
+        #my-id {
+            color: violet;
+        }
+
+        .my-class {
+            color: blue;
+        }
+
+        p.my-class {
+            color: gray;
+        }
+
+        div p.my-class {
+            color: pink
+        }
+
+        div #my-id {
+            color: rgb(225, 0, 255);
+        }
+
+        p#my-id {
+            color: aqua
+        }
+
+        div p#my-id {
+            color : yellow
+        }
+
+        body div.parent p#my-id{
+            color: lightgreen
+        }
+
+        div.parent p#my-id.my-class {
+            color: purple;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <p class="my-class my-class2" id="my-id">This is a paragraph</p>
+    </div>
+</body>
+
+</html>

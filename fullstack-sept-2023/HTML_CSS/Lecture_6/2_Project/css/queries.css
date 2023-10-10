@@ -1,0 +1,47 @@
+@media only screen and (max-width:2000px) {
+
+  /* html {
+      font-size: 20px;
+    } */
+}
+
+
+@media only screen and (max-width:700px) {
+  /* html {
+    font-size:16px;
+  } */
+
+
+}
+
+@media only screen and (max-width:450px) {
+  html {
+      font-size: 14px;
+    }
+
+    .howto-container {
+      flex-direction: column;
+    }
+
+    .steps-container {
+      margin-top: 4rem;
+    }
+  
+    .step-val {
+      height: 3rem;
+      width: 3rem;
+      text-align: center;
+      padding-top: 0.5rem;
+      border-radius: 50%;
+      border-style: solid;
+      font-size: 150%;
+    }
+  
+    .signup-child {
+      transform: scale(1.0);
+      margin-bottom: 2rem;
+    }
+  
+}
+
+
