@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click Me</button>
+    <input type="text">
+    <ul>
+
+    </ul>
+    <script>
+
+      console.log("before");
+      const btn = document.querySelector('button');
+      const ul1 = document.querySelector('ul');
+      const input1 = document.querySelector('input');
+
+      console.dir(input1);
+
+      btn.addEventListener('click',function(){
+
+        if(input1.value) {
+            const li1 = document.createElement('li');
+            li1.textContent = input1.value;
+            ul1.appendChild(li1);
+            input1.value = "";
+        }
+     
+      })
+
+      console.log("after");
+
+
+    </script>
+</body>
+
+</html>
