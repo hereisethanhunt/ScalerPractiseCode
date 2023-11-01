@@ -16,31 +16,36 @@
  *    - if i click on reply button, again input field with button has to apprear with respect to that comment/ thread.
  * 
  */
+
+
 class CommentBox {
     constructor() {
        this.commentInput = document.querySelector('#commentInput');
        this.commentButton = document.querySelector('#addCommentBtn');
        this.commentList = document.querySelector('#commentList');
-       this.addComment = this.addComment.bind(this);
-       this.commentButton.addEventListener('click',this.addComment);
+       this.commentButton.addEventListener('click',this.addReply.bind(this, this.commentInput, this.commentList));
     }
 
-    addComment() {
-        const inputValue = this.commentInput.value.trim();
-        console.log(inputValue);
-        if(!!inputValue) 
-        {
+    addReply(inputBox, replyContainer){
+        // input box or value
+        const inputValue = inputBox.value.trim();
+        if(!!inputValue){
             const li = this.createCommentElement(inputValue);
-            this.commentList.appendChild(li);
-            this.commentInput.value = '';
+            replyContainer.appendChild(li);
+            inputBox.value = '';  
+            console.log(!!replyContainer.querySelector('.inputNBtn'));
+            if(!!replyContainer.querySelector('.inputNBtn')) {
+                replyContainer.querySelector('.inputNBtn').remove();
+            }
+          
         }
-
     }
 
     createCommentElement(inputValue){
         const li = document.createElement('li');
         const replyBtn = document.createElement('button');
-        replyBtn.textContent = 'Reply...';
+        replyBtn.textContent = 'Reply';
+        replyBtn.classList.add('replyBtn');
         replyBtn.addEventListener('click', this.showReplyInput.bind(this));
         const div = document.createElement('div');
         div.textContent = inputValue;
@@ -52,31 +57,31 @@ class CommentBox {
     }
 
     showReplyInput(e){
+
         console.log(this);
         console.log(e.target.parentElement);
-
         const li = e.target.parentElement;
+
+        if(li.querySelector('.inputNBtn'))
+            return;
+
+        console.log(li);
+        const inputNBtn = document.createElement('div');
+        inputNBtn.classList.add('inputNBtn');
         const replyContainer = document.createElement('div');
         replyContainer.classList.add('reply-container');
         const inputBox = document.createElement('input');
         const btn = document.createElement('button');
-        btn.textContent = 'reply...'
+        btn.textContent = 'Reply'
         btn.addEventListener('click', this.addReply.bind(this, inputBox, replyContainer))
-        replyContainer.appendChild(inputBox);
-        replyContainer.appendChild(btn);
+        inputNBtn.appendChild(inputBox);
+        inputNBtn.appendChild(btn);
+        replyContainer.appendChild(inputNBtn);
         li.appendChild(replyContainer);
 
     }
 
-    addReply(inputBox, replyContainer){
-        const inputvalue = inputBox.value.trim(); // continue in next class
-        
-        // if(!!inputvalue){
-        //     const li = this.createCommentElement(inputvalue);
-        //     this.commentList.appendChild(li);
-        //     this.commentInput.value = '';
-        // }
-    }
+
    
 }
 

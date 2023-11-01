@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Closure example and dom events</h1>
+    <script>
+
+        let theThing = null;
+        let replaceThing = function () {
+
+            console.log("something");
+
+            let originalThing = theThing;
+            let unused = function () {
+                if (originalThing) {
+                    console.log("hi");
+                };
+            } 
+            thething = {
+                longStr: new Array(1000000),
+                someMethod: function () {
+                    console.log("hi");
+                }
+
+            }
+        }
+        setInterval(() => {
+            replaceThing()
+        }, 1000);
+
+        // element1.addEventListener('click',fn);
+        // element1.removeEventListener('click')
+        
+// function calc(n) {
+//     let sum = 0;
+//     for (let i = 0; i < n; i++) {
+//         sum += n;
+//     }
+//     return sum;
+// }
+// function memoize(fn){
+
+// let cache = {}; // private variable
+// return function(n) {
+//     if(cache[n] !== undefined){
+//         console.log("cached.....")
+//         return cache[n];
+//     }
+//     else
+//     {
+//         console.log("calculating.....")
+//         let ans = fn(n);
+//         cache[n] = ans; // { 5 : 25 }
+//         return cache[n];
+//     }
+// }
+// }
+
+// let efficentCalcFN = memoize(calc);
+// console.log(efficentCalcFN(5));
+// efficentCalcFN = null;
+// console.log(efficentCalcFN(8));
+</script>
+</body>
+
+</html>
