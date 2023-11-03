@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--
+## Problem statement 
+Create Autocomplete/ Typeahead
+
+## Must Haves 
+
+* On typing inside the search box , 
+it should suggest related terms
+
+* use this api point to fetch the data : 
+https://restcountries.com/v3.1/name/{name}
+
+* user should be able to select one of the options
+
+## Good to Have 
+
+* search should be performant enough 
+* it should avoid unnecessary network call
+* it should persist previously fetched data
+
+## Implementation
+    change event listener on input
+    we will create a cache for storing old/stale response  local storage -- later
+    we will add the data in a ul/li format. also use fragments use. 
+    call the actual api and store it in variable
+    we should do something to lower our number of api calls - timeout / debouncing
+    shirts -- 
+        sh (1 api call) -> came second
+        shirts (1 api call) -> came first 
+                                        -> response for shirts
+                                        -> concatenated with shirts response or replaced (depend on how u wrote ur client)
+
+        we should cancel our previous api calls.
+  -->
+
+<body>
+    <div class="autocomplete">
+        <h2>Auto complete</h2>
+        <input type="text" class="search_input" id="search_input">
+        <ul id="suggestion_box" class="suggestion_box"></ul>
+    </div>
+    <script src="fetchData.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
+
+
