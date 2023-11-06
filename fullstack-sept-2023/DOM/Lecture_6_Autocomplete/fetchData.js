@@ -28,24 +28,39 @@ it is an promise based API*/
 //         console.log("hello", err);
 //     })
 
+let currentApiContext = null;
 async function getCountries(keyword) {
     try {
+        if(!!currentApiContext) {
+            currentApiContext.abort();
+        }
+        const abortcontroller = new AbortController();
+        currentApiContext = abortcontroller;
         const rawResponse = await fetch(
             `https://restcountries.com/v3.1/name/${keyword}`,
             {
                     method: "GET",
                     headers: {
                       "Content-Type": "application/json",
-                    }
+                    },
+                    signal: abortcontroller.signal
             });
-        // console.log(rawResponse.status);
+        currentApiContext = null; // rawResponse
         if(rawResponse.status > 299 || rawResponse.status < 200)
             throw new Error('Something went wrong')
-
         const response = await rawResponse.json();
         return response
     } catch (err) {
-        console.log("err", err);
+        if(err.name === "AbortError")
+        {
+            console.log(err);
+            console.log("User has aborted");
+        }
+        else
+        {
+            currentApiContext = null;
+            console.log(err, "hello");
+        }
     }
 }
 
