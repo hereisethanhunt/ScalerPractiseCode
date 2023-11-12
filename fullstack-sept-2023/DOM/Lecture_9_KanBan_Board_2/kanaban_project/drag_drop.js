@@ -1,4 +1,4 @@
-// console.log("Js attached");
+
 const containers = document.querySelectorAll('.container');
 let draggedBox = null;
 console.log(containers);
