@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- algorithm to efficiently change your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- the whole application lives inside-->
+    <div id="root"></div>
+
+    <!-- single Page applcation : JS -->
+    <script type="text/babel">
+        function HELLO(props){
+            let {age, occupation, address} = props;
+            console.log(address);
+            // jsx
+            return <div>
+                Hello Vishal, my age is {age} and occupation is {occupation}.
+                </div>;
+        }
+
+        // <NewChild address={address}></NewChild>
+        // prop drilling will discuss later on.
+
+        // we can break a bigger problem into smaller chunks of code
+        // - increases reusability using parent-child component structure
+        function PARENTAPP(props){
+            let {address} = props;
+            return <div>
+                    <HELLO age="18" occupation="college" address={address}></HELLO>
+                    <HELLO age="28" occupation="sde"></HELLO>
+                    <HELLO age="38" occupation="manager"></HELLO>
+                    <HELLO age="08" occupation="student"></HELLO>
+                    <BYE></BYE>
+                </div>
+        }
+        // parent
+        // /      \
+        // hello  bye
+
+        function BYE(){
+            return <div>Bye</div>
+        }
+        
+        ReactDOM.render(<PARENTAPP address="MG Road"></PARENTAPP>,document.getElementById("root"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- to efficiently manage the UI Manipulations -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- React DOM  -> uses react to update the DOM (Web applications)-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+     <!-- transpiler -> JSX -> into javascript ES5 -->
+     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+   <div id="root"></div>
+
+   <script type="text/babel">
+
+        // Components are independent and reusable bits of code. 
+        // They serve the same purpose as JavaScript functions, 
+        // but work in isolation and return HTML(JSX like HTML)
+
+        // Props is - whatever is passed to the component.
+        function HELLO(props){
+            let {age, occupation} = props;
+            // jsx
+            return <div>Hello Vishal, my age is {age} and occupation is {occupation}</div>;
+        }
+        
+        ReactDOM.render(<HELLO age="18" occupation="mentor and SDE"></HELLO>,document.getElementById("root"))
+   </script>
+</body>
+
+</html>
+<!--  
+ 1. component: Components are independent and reusable bits of code. 
+ They serve the same purpose as JavaScript functions, 
+ but work in isolation and return HTML
+ 2. Prop : properties passed to a component
+ 3. JSX -> Javascript and XML
+-->
