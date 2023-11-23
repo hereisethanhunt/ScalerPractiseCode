@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+        
+        function Count(){
+            console.log("hello");
+            //let counter = 0;
+
+            // variable = counter and a function to change that variable = setCounter
+            const [counter, setCounter] = React.useState(0);
+
+            // const xyz = React.useState(0);
+            // counter = xyz[0] 
+            // setCounter = xzy[1];
+
+            const decrementCount= () => {
+                //counter--;
+                setCounter(counter - 1);
+                // re-render ur component. 
+                // but react will always store that usestate value even if it is re-rendered
+            }
+            const incrementCount= ()=>{
+                //counter++;
+                setCounter(counter + 1);
+            }
+            return (
+                <div>
+                    <button onClick={decrementCount}>-</button>
+                    <p>{"counter"}</p>
+                    <button onClick={incrementCount}>+</button>
+                    <BYE/>
+                </div>
+            )
+        }
+
+        // react.memo;
+        function BYE(){
+
+            console.log("i am the child");
+            return <div>bye</div>
+        }
+
+        ReactDOM.render(<Count></Count>,document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
+

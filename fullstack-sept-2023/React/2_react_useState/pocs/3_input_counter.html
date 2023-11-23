@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+       input{
+        display: block;
+        margin-bottom: 10px;;
+       }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        
+        function Count(){
+            // console.log("hello");
+            const [counter, setCounter] = React.useState(0);
+            const [inputValue, setInputValue] = React.useState("");
+
+            const decrementCount= () => {
+                //counter--;
+                setCounter(counter - 1);
+                // re-render ur component. 
+                // but react will always store that usestate value even if it is re-rendered
+            }
+            const incrementCount= ()=>{
+                setCounter(counter + 1);
+            }
+            const changeInput = (event)=>{
+                // asynchronous in nature.
+                setInputValue(event.target.value); 
+                // inputValue to ""
+                console.log(inputValue, "input value"); // if i write "h" , what will be consolled
+            }
+
+            const changeInputUncontrolled = (event)=>{
+                console.log(event.target.value);
+            }
+            return (
+                <div>
+                    <p>uncontrolled</p>
+                    <input type="text" onChange={changeInputUncontrolled} />
+                    <p>controlled</p>
+                    <input type="text" onChange={changeInput} value={inputValue}/>
+                    <br/>
+                    <button onClick={decrementCount}>-</button>
+                    <p>{counter}</p>
+                    <button onClick={incrementCount}>+</button>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<Count></Count>,document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    when we are control UI change of elements like input using state then these components are 
+    known as controlled component
+  -->

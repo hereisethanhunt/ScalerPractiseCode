@@ -1,0 +1,75 @@
+<!-- 
+    I want to create 5 counters -> I want to pass number
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+        .counter{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function ParentCount(){
+            console.log("Parent re-render");
+            return (
+                <div>
+                    <Count index={1}/>
+                    <Count index={2}/>
+                    <Count index={3}/>
+                    <Count index={4}/>
+                </div>
+            )
+        }
+        function Count(props){
+            console.log("Child re-render"+ props.index);
+
+            const [counter, setCounter] = React.useState(0);
+            const decrementCount= () => {
+                setCounter(counter - 1);
+            }
+            const incrementCount= ()=>{
+                setCounter(counter + 1);
+            }
+            return (
+                <div className="counter">
+                    <button onClick={decrementCount}>-</button>
+                    <p>{counter} - {props.index}</p>
+                    <button onClick={incrementCount}>+</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<ParentCount></ParentCount>,document.getElementById("root"))
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    1. usecase of state wrt to a component :to make it dynamic 
+    2. you can create complex component by using multiple 
+    independent  component.
+    3. Props:  to pass data to a children component .Majorly
+    the data specific to that component
+ -->
