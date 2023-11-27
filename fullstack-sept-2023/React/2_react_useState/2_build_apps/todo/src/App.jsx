@@ -1,34 +1,15 @@
-import { useState } from "react"
-
-
+import Todo from "./components/todo/Todo"
+import GetData from "./components/useEffectExamples/GetData"
+import UseEffectExamples from "./components/useEffectExamples/UseEffectExamples"
 function App() {
-
-  
-  const [inputValue,setInputValue] = useState("");
-  // const [taskArr, setTaskArr] = useState([]);
-
-  const updateInput = (e) => {
-    setInputValue(e.target.value);
-  }
-  const addTask = () =>{
-
-  }
   return (
     <>
-      <input type="text" value={inputValue} onChange={updateInput}/>
-
-      <button onClick={addTask}>Add</button>
-      <div>
-        <ul>
-         {/* {
-          taskArr.map((eachTask) => {
-             <li>{eachTask}</li>
-          })
-         } */}
-        </ul>
-      </div>
+      <Todo/>
+      {/* <GetData/> */}
+      {/* <UseEffectExamples/> */}
     </>
   )
 }
 
 export default App
+// https://www.freecodecamp.org/news/what-is-lifting-state-up-in-react/
