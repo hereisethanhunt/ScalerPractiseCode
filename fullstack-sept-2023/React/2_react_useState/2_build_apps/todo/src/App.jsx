@@ -4,9 +4,9 @@ import UseEffectExamples from "./components/useEffectExamples/UseEffectExamples"
 function App() {
   return (
     <>
-      {/* <Todo/> */}
+      <Todo/>
       {/* <GetData/> */}
-      <UseEffectExamples/>
+      {/* <UseEffectExamples/> */}
     </>
   )
 }

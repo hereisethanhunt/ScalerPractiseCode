@@ -12,7 +12,7 @@ function InputText(props) {
 
       const handleAddTask = () => {
         addTask(inputValue);
-        setInputValue("");
+        // setInputValue("");
       }
 
       console.log("input render")
@@ -20,6 +20,7 @@ function InputText(props) {
   return (
     <>
      <input type="text" value={inputValue} onChange={updateInput}/>
+     
       <button onClick={handleAddTask}>Add</button>
     </>
   )
