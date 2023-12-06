@@ -7,13 +7,14 @@ function TodoComponent() {
 
  const dispatch = useDispatch();
  const [inputValue,setInputValue] = useState("");
- const todoArr = useSelector((store) => store.todoState.todoArr);
+ const {todoArr, variableState} = useSelector((store) => store.todoState);
 
   const updateInput = (e) => {
     setInputValue(e.target.value)
   }
 
   const handleAddTask = () => {
+    console.log(variableState, "variableState");
     dispatch(action.addTask(inputValue));
     setInputValue('');
   }
