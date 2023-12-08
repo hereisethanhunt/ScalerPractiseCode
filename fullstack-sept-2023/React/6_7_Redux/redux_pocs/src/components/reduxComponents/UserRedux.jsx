@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserMiddleWare } from '../../redux/middlewares/useMiddleware';
+import userSlice from '../../redux/UserSlice';
+const action = userSlice.actions;
 function UserRedux() {
 
   const {loading, error, data} = useSelector((store) => store.userState);
   const dispatch = useDispatch();
 
   useEffect(()=>{
+    // fetchUserMiddleWare(2);
     dispatch(fetchUserMiddleWare(2));
+    // dispatch(action.userLoading())
     return function(){
         console.log("abort controller of the api call which is in progress while unmounting comp")
     }
