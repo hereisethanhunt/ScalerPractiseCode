@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <PaginationContext>
+        {/* convert to redux store - pagination */}
         <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Home></Home>}> </Route>
