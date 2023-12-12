@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <h2>Use state Example</h2>
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
       <h2>Use reducer Example</h2>
       {/* <CounterUseReducer></CounterUseReducer> */}
-      {/* <Form></Form> */}
+      <Form></Form>
       {/* <UseReducerWithContext></UseReducerWithContext> */}
     </>
   )

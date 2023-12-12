@@ -4,6 +4,7 @@ const PaginationWrapperContext = React.createContext();
 
 function PaginationContext({children}) {
 
+  // useReducer
     const [currPage, setCurrPage] = useState(1);
     const [pageSize, setPageSize] = useState(4);
 
