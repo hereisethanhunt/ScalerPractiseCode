@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 200px;
+            border: 5px solid red;
+            padding: 20px;
+            margin-bottom: 400px;
+        }
+
+        .auto {
+            overflow: auto;
+            /* box-sizing: border-box; */
+        }
+        .visible {
+            overflow: visible;
+        }
+        .hidden {
+            overflow: hidden;
+            /* white-space: nowrap; */
+        }
+        .scroll{
+            overflow: scroll;
+            /* white-space: nowrap; */
+        }
+        .clip {
+            overflow: clip;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- <div>I am a div</div>
+    <div class="box"></div> -->
+
+    <!-- <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Omnis, quos architecto ducimus odit natus, delectus reprehenderit 
+        possimus dolorum voluptas voluptatem consequatur 
+        quibusdam dolores explicabo 
+        in corrupti molestiae harum iusto ipsam.
+    </div> -->
+
+    <div class="box scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nisi obcaecati nemo recusandae cum odio quam, corrupti ipsam deserunt quae voluptatem iste labore consequuntur dicta laboriosam, magnam a illum dolor.</div>
+    <div class="box auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nobis repudiandae et nihil saepe illo atque reprehenderit reiciendis odit eius animi quos expedita architecto laudantium molestias necessitatibus, ea rem porro.</div>
+    <div class="box hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolore maxime exercitationem possimus hic ut sit similique placeat recusandae tempore unde, nobis ratione. Doloremque neque tempora excepturi, deleniti vel blanditiis!</div>
+    <div class="box clip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolore maxime exercitationem possimus hic ut sit similique placeat recusandae tempore unde, nobis ratione. Doloremque neque tempora excepturi, deleniti vel blanditiis!</div>
+    <div class="box visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolore maxime exercitationem possimus hic ut sit similique placeat recusandae tempore unde, nobis ratione. Doloremque neque tempora excepturi, deleniti vel blanditiis!</div>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+
+/* the condition in which this css will be applied */
+@media only screen and (min-width: 1024px) {
+    h1{
+        color:lightcoral
+    }
+}
